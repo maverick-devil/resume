@@ -23,7 +23,7 @@ main.controller("resumeController", function($scope) {
   		];
 
   	$scope.path = "../images/svg";
- 	$scope.images = [{"image":"../images/svg/java.png"}, {"image":"../images/svg/python.png"}, {"image":"../images/svg/nodejs.png"}, {"image":"../images/svg/mongodb.png"},{"image":"../images/svg/html5.png"}, {"image":"../images/svg/css3.png"},];
+ 	$scope.images = [{"image":"images/svg/java.png"}, {"image":"images/svg/python.png"}, {"image":"images/svg/nodejs.png"}, {"image":"images/svg/mongodb.png"},{"image":"images/svg/html5.png"}, {"image":"images/svg/css3.png"},];
 
  	$scope.projects = [
  						{
