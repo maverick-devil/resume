@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Harshal.</title>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.css">
+	<script type="text/javascript" src="../js/angular/angular/angular.min.js"></script>
+	<script type="text/javascript" src="../js/angular/other/main.js"></script>
+</head>
+<body ng-app="main" ng-controller="resumeController" ng-init="page=0" style="background-color: #9ee6ff">
+	<!--script language="javascript">
+		alert('Welcome to Harshal\'s place!');
+	</script-->
+	<div class="home" ng-show="page==0" style="margin: 0 auto; margin-left: 200px; margin-top: 200px; height: 80%; width: 85%;">
+		<div class="image" style="float: left; border: 3px solid; border-radius: 12px;">
+			<img src="../images/image.jpg" align="left" height="332px" width="300px">
+		</div>
+		<div class="intro" style="float: right; margin-right: 210px;">
+			<h2>Harshal Chavan.</h2>
+			<h4>B.Tech. (CSE) </h4>
+			<h5>Walchand College of Engineering, Sangli</h5>
+			<h6>Python enthusiast with sound knowledge in Core Java, Node.js and Mongodb.</h6>
+			<center><button ng-click="page=page+1">Details</button></center>
+		</div>
+	</div>
+	<div class="others" ng-show="page!=0" style="margin-top: 200px;"> 
+		<div class="sidebar" style="width: 28%; height: 550px; border-right: 2px solid; float: left;">
+			<center><img src="../images/image.jpg" align="left" height="166px" width="150px"/></center>
+			<center><p><b>Harshal Chavan</b></p></center>
+			<center><p><b>B.Tech. (CSE)</b></p></center>
+			<center><p><b>Walchand College of Engineering, Sangli</b></p></center>
+			<center><p>Python enthusiast with sound knowledge in Core Java, Node.js and Mongodb.</p></center>
+		</div>
+		<div class="center" style="width: 72%; float: right; height: 550px;">
+			<div class="education" ng-show="page==1">
+				<center><h3>Educational Details</h3></center>
+				<br/>
+				<center><table style="border: 2px solid;" cellspacing="10">
+					<thead>
+						<td>Qualification</td>
+						<td>Year</td>
+						<td>Name of School/College</td>
+						<td>Percentage/CPI</td>
+					</thead>
+					<tr ng-repeat="data in education">
+						<td>{{ data.qualification }}</td>
+						<td>{{ data.year }}</td>
+						<td>{{ data.name }}</td>
+						<td>{{ data.marks }}</td>
+					</tr>
+				</table></center>
+				<br/>
+			</div>
+			<div class="skills" ng-show="page==2">
+				<center><h3>Technical Skills</h3></center>
+				<ul ng-repeat="image in images" style="display: inline-block; width: 18%; list-style-type: none;">
+						<li style="margin-right: -150px;"><img ng-src="{{ image.image }}" style="height: 50%; width: 50%; border:1.2px solid; padding: 10px;"></li>
+				</ul>
+			</div>
+			<div class="projects" ng-show="page==3">
+				<center><h3>Projects Undertaken</h3></center>
+				<ul ng-repeat="project in projects">
+					<li>
+						<p style="margin-bottom: 0;"><b>{{ project.name }}</b></p>
+						<ul ng-repeat="tool in project.tools" style="display: inline-block;">
+							<li>{{ tool }}</li>
+						</ul><br>
+						<p>{{ project.description }}</p>
+					</li>
+				</ul>
+			</div>
+			<div class="achievements" ng-show="page==4">
+				<center><h3>Achievements</h3></center>
+				<ul ng-repeat="achievement in achievements">
+					<li>{{ achievement }}</li>
+				</ul>
+			</div>
+			<div class="activities" ng-show="page==5">
+				<center><h3>Activities</h3></center>
+				<ul ng-repeat="activity in activities">
+					<li>{{ activity }}</li>
+				</ul>
+			</div>
+			<div class="other-details" ng-show="page==6">
+				<div class="strengths" style="float: left; width: 50%;">
+					<center><h3>Strengths</h3></center>
+					<ul ng-repeat="strength in strengths">
+						<li>{{ strength }}</li>
+					</ul>
+				</div>
+				<div class="hobbies" style="float: right; width: 50%;">
+					<center><h3>Hobbies</h3></center>
+					<ul ng-repeat="hobby in hobbies">
+						<li>{{ hobby }}</li>
+					</ul>
+				</div>
+
+			</div>
+			<center><button style="display: inline-block;" ng-click="page=page+1">Continue</button></center>
+			<center><button style="display: inline-block;" ng-click="page=page-1">Previous</button></center>
+		</div>
+	</div>
+</body>
+</html>
